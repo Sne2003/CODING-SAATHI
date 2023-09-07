@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .outer-div{
+                background-color: rgb(149, 148, 146);
+                height: 91vh;
+                width: 100%;
+                padding-top: 4%;
+            }
+            .inner-div{
+                background-color: black;
+                height: 80vh;
+                width: 30%;
+                margin-left: 32%;
+                padding-left: 1.5%; 
+                border-radius: 5%;
+            }
+            .display-div{
+                background-color: azure;
+                height: 20vh;
+                width: 95%;
+                border-radius: 5px;
+            }
+            .head-div{
+                height: 5vh;
+                width: 95%;
+                margin-left: 80%;
+                margin-bottom: 3%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .info-div{
+                background-color: rgb(177, 177, 177);
+                height: 50vh;
+                width: 95%;
+                border-radius: 5px;
+                margin-top: 2%;
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer-div">
+            <div class="inner-div">
+                <div class="head-div">
+                   <font color="white"><h3><i>-fx82ms</i></h3></font>
+                   <P><font color="white"><h3><b>CASIO</b></h3></font></P>
+                </div>
+                <div class="display-div">
+
+                </div>
+                <div class="info-div">
+                    <table>
+                        <tr>
+                          <td><input type="button" value="7" onclick="display('7')" style="height: 8vh; width: 110%; margin-top: 16px; margin-left: 2%; border-radius: 5px; font-size: xx-large;" ></td>
+                          <td><input type="button" value="8" onclick="display('8')" style="height: 8vh; width: 110%; margin-top: 16px; margin-left: 2%; border-radius: 5px; font-size: xx-large;" ></td>
+                          <td><input type="button" value="9" onclick="display('9')" style="height: 8vh; width: 110%; margin-top: 16px; margin-left: 2%; border-radius: 5px; font-size: xx-large;" ></td>
+                          <td><input type="button" value="AC" onclick="clearscreen()" style="height: 8vh; width: 110%; margin-top: 16px; margin-left: 2%; border-radius: 5px; font-size: xx-large;" ></td>
+                        </tr>
+                        <tr>
+                         <td><input type="button" value="4" onclick="display('4')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="5" onclick="display('5')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="6" onclick="display('6')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="+" onclick="display('+')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                        </tr>
+                        <tr>
+                         <td><input type="button" value="1" onclick="display('1')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="2" onclick="display('2')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="3" onclick="display('3')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                         <td><input type="button" value="-" onclick="display('-')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="(" onclick="display('(')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value=")" onclick="display(')')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="%" onclick="percentage()" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="*" onclick="display('*')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="." onclick="display('.')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="0" onclick="display('0')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="=" onclick="display('=')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="/" onclick="display('/')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                            <td><input type="button" value="^" onclick="display('^')" style="height: 8vh; width: 80%; margin-top: 16px; margin-left: 0%; border-radius: 5px; font-size: xx-large;" ></td>
+                        
+                        </tr>
+                    </table>
+                </div>
+            </div>    
+        </div>
+        <script>
+            function clearscreen()
+            {
+                document.getElementaryById("result").value="";
+                console.log();
+            }
+            function display(value)
+            {
+                document.getElementById("result").value+=value ; 
+                console.log(value);
+            }
+            function calculate()
+            {
+            var a = document.getElementById("result").value; 
+            var b = eval(a);
+            document.getElementById("result").value = b; 
+            console.log(b);
+            } 
+            function percentage()
+            {
+            var a = document.getElementById("result").value; 
+            var p = a/100; 
+            document.getElementById("result").value = p;
+            console.log(p);
+            }
+            function calculate()
+            {
+                var a = document.getElementaryById("result").value;
+                var b = document.getElementaryById("result").value;
+                var d = a*b;
+                document.getElementById("result").value = d;
+                console.log(d)
+            }
+        </script>
+    </body>
+</html>
